@@ -1,0 +1,11 @@
+
+U	java:S106:"9Replace this use of System.out or System.err by a logger.(ÎÛÔÃ8üÑ©Õ/
+U	java:S106*"9Replace this use of System.out or System.err by a logger.(ÎÛÔÃ8ƒÎ¬Ô/
+e
+java:S1192"HDefine a constant instead of duplicating this literal "Success" 3 times.(§»¯¶8üÑ©Õ/
+i
+java:S5998O"LRefactor this repetition that can lead to a stack overflow for large inputs.(Ğšèæ8¿ŒªÕ/
+t
+java:S3776H"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(§³•Šşÿÿÿÿ8üÑ©Õ/
+F
+java:S16596")Declare "designation" on a separate line.(ŸÅ…°8Œ…°Õ/
