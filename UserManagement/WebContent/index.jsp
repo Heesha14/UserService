@@ -22,19 +22,29 @@ pageEncoding="ISO-8859-1"%>
  <br> Last name: 
  <input id="lastName" name="lastName" type="text" 
  class="form-control form-control-sm">
-  Gender: 
- <input id="gender" name="gender" type="text" 
- class="form-control form-control-sm">
+ <br> Gender:
+ <div class="col-md-8 control-label" style="text-align: left; import!" align="left">
+ <input type = "radio" name = "gender" id = "genderM" value = "M" checked = "checked">&nbsp;Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <input type = "radio" name = "gender" id = "genderF" value = "F">&nbsp;Female
+ </div> 
  <br> Email: 
  <input id="email" name="email" type="text" 
  class="form-control form-control-sm">
  <br> Phone number: 
- <input id="phone" name="phone" type="number" 
+ <input id="phone" name="phone" type="text" 
  class="form-control form-control-sm">
- <br> Designation: 
- <input id="designation" name="designation" type="text" 
- class="form-control form-control-sm">
- Username: 
+ <br>
+ Designation: <select class="form-control form-control-sm" id='designation'
+						name="designation">
+						<option selected value=''>--Select Designation--</option>
+						<option value='AD'>Admin</option>
+						<option value='PM'>Project Manager</option>
+						<option value='FB'>Funding Body</option>
+						<option value='BY'>Buyer</option>
+
+					</select> 
+ 
+ <br>Username: 
  <input id="username" name="username" type="text" 
  class="form-control form-control-sm">
  <br> Password: 
