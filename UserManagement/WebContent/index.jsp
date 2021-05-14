@@ -32,18 +32,14 @@
 					<br> Email: <input id="email" name="email" type="text"
 						class="form-control form-control-sm"> <br> Phone
 					number: <input id="phone" name="phone" type="text"
-						class="form-control form-control-sm"> <br>
-					Designation: <select class="form-control form-control-sm"
-						id='designation' name="designation">
-						<option selected value=''>--Select Designation--</option>
-						<option value='AD'>Admin</option>
-						<option value='PM'>Project Manager</option>
-						<option value='FB'>Funding Body</option>
-						<option value='BY'>Buyer</option>
-
-					</select> <br>Username: <input id="username" name="username"
+						class="form-control form-control-sm"> 
+					
+					<br>Designation: <input id="designation" name="designation"
+						type="text" class="form-control form-control-sm">
+					
+					<br>Username: <input id="username" name="username"
 						type="text" class="form-control form-control-sm"> <br>
-					Password: <input id="password" name="password" type="text"
+					Password: <input id="password" name="password" type="password"
 						class="form-control form-control-sm"> <br> <input
 						id="btnSave" name="btnSave" type="button" value="Save"
 						class="btn btn-primary"> <input type="hidden"
