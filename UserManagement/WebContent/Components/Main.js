@@ -34,9 +34,13 @@ $(document).on("click", "#btnSave", function(event) {
 function onUserSaveComplete(response, status)
 { 
 
+//	console.log("onUserSaveComplete:"+response);
 	if (status == "success") {
-		var resultSet = JSON.parse(response);
+			var resultSet = JSON.parse(response);
+
+		
 		if (resultSet.status.trim() == "success") {
+			console.log("inside alert");
 			$("#alertSuccess").text("Successfully saved.");
 			$("#alertSuccess").show();
 			$("#divUsersGrid").html(resultSet.data);

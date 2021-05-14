@@ -61,39 +61,18 @@ public class UserRepoImpl implements UserRepo {
 
             preparedStatement.execute();
 
-            output = "User sucessfully inserted";
-
-            /*
-             * username, password , role is stored in user table
-             */
-            addUsertoUserTable(username, password, designation);
-			 String newUsers = getAllUsers(); 
+             conn.close(); 
+			 String newItems = getAllUsers(); 
 			 output = "{\"status\":\"success\", \"data\": \"" + 
-					 newUsers + "\"}"; 
-
-            return output;
-
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-            e.printStackTrace();
-			 output = "{\"status\":\"error\", \"data\": \"Error while inserting the user.\"}"; 
-            return output;
-
-        } finally {
-            /*
-             * database connectivity closed at the end of transaction
-             */
-            try {
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-
-        }
-
-    }
+			 newItems + "\"}"; 
+			 } 
+			 catch (Exception e) 
+			 { 
+			 output = "{\"status\":\"error\", \"data\": \"Error while inserting the item.\"}"; 
+			 System.err.println(e.getMessage()); 
+			 } 
+			 return output; 
+			 } 
 
 
     @Override
@@ -280,7 +259,7 @@ public class UserRepoImpl implements UserRepo {
             PreparedStatement stmt = conn.prepareStatement(sql);
 
             ResultSet rs = stmt.executeQuery();
-            output = "<table border=\"1\">"
+            output = "<table border='1'>"
                     + "<tr><th> User ID </th>"
                     + "<th>First Name</th>"
                     + "<th>Last Name</th>"
@@ -313,7 +292,7 @@ public class UserRepoImpl implements UserRepo {
                 output += "<td>" + gender + "</td>";
                 output += "<td>" + username + "</td>";
                 output += "<td>" + password + "</td>";
-                output += "<td>" + registerDate + "</td></tr>";
+                output += "<td>" + registerDate + "</td>";
                 
              // buttons
             	output += "<td><input name='btnUpdate' type='button' value='Update' "

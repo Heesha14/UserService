@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.repo.UserRepoImpl;
 import com.service.UserService;
 import com.service.UserServiceImpl;
 
@@ -22,7 +23,8 @@ import com.service.UserServiceImpl;
 public class UsersAPI extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	 UserService userServiceObj = new UserServiceImpl();
+	 //UserRepoImpl userServiceObj = new UserRepoImpl();
+	UserService userServiceObj = new UserServiceImpl();
        
     /**
      * @see HttpServlet#HttpServlet()
