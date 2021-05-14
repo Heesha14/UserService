@@ -59,17 +59,6 @@ function onUserSaveComplete(response, status)
 	$("#formUser")[0].reset(); 
 }
 
-//$(document).on("click", ".btnUpdate", function(event) {
-//	$("#hidUserIDSave").val($(this).data("userid"));
-//	$("#username").val($(this).closest("tr").find('td:eq(0)').text());
-//	$("#password").val($(this).closest("tr").find('td:eq(1)').text());
-//	$("#email").val($(this).closest("tr").find('td:eq(2)').text());
-//	$("#phone").val($(this).closest("tr").find('td:eq(3)').text());
-//	$("#gender").val($(this).closest("tr").find('td:eq(4)').text());
-//	$("#designation").val($(this).closest("tr").find('td:eq(5)').text());
-//	$("#firstName").val($(this).closest("tr").find('td:eq(6)').text());
-//	$("#lastName").val($(this).closest("tr").find('td:eq(7)').text());
-//});
 $(document).on("click", ".btnUpdate", function(event) {
 	$("#hidUserIDSave").val($(this).data("userid"));
 	$("#firstName").val($(this).closest("tr").find('td:eq(0)').text());
