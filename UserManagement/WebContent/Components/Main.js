@@ -31,7 +31,7 @@ $(document).on("click", "#btnSave", function(event) {
 	});
 });
 
-function onUseraveComplete(response, status)
+function onUserSaveComplete(response, status)
 { 
 
 	if (status == "success") {
@@ -133,6 +133,7 @@ if ($("#username").val().trim() == "")
  { 
  return "Enter username."; 
  } 
+//password------------------------
 if ($("#password").val().trim() == "") 
 { 
 return "Enter password."; 
