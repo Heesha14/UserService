@@ -67,13 +67,17 @@ public class UserRepoImpl implements UserRepo {
              * username, password , role is stored in user table
              */
             addUsertoUserTable(username, password, designation);
+			 String newUsers = getAllUsers(); 
+			 output = "{\"status\":\"success\", \"data\": \"" + 
+					 newUsers + "\"}"; 
 
             return output;
 
         } catch (Exception e) {
             System.err.println(e.getMessage());
             e.printStackTrace();
-            return "Error occured when inserting user to database";
+			 output = "{\"status\":\"error\", \"data\": \"Error while inserting the user.\"}"; 
+            return output;
 
         } finally {
             /*
@@ -123,11 +127,17 @@ public class UserRepoImpl implements UserRepo {
              * database connectivity closed at the end of transaction
              */
             conn.close();
-            result = "User deleted successfully";
+	       	 String newUsers = getAllUsers(); 
+	       	result = "{\"status\":\"success\", \"data\": \"" + 
+	       			newUsers + "\"}"; 
+            //result = "User deleted successfully";
 
         } catch (Exception e) {
-            result = "Error when deleting user";
+        	result = "{\"status\":\"error\", \"data\": \"Error while deleting the user.\"}"; 
+			 System.err.println(e.getMessage()); 
+            //result = "Error when deleting user";
             e.printStackTrace();
+            
         }
         return result;
 
@@ -241,9 +251,13 @@ public class UserRepoImpl implements UserRepo {
             // execute the statement
             preparedStatement.execute();
             conn.close();
-            output = "Updated successfully";
+           // output = "Updated successfully";
+			 String newUsers = getAllUsers(); 
+			 output = "{\"status\":\"success\", \"data\": \"" + 
+					 newUsers + "\"}"; 
         } catch (Exception e) {
-            output = "Error while updating the user.";
+            //output = "Error while updating the user.";
+        	 output = "{\"status\":\"error\", \"data\": \"Error while updating the user.\"}";
             System.err.println(e.getMessage());
         }
         return output;
@@ -300,6 +314,12 @@ public class UserRepoImpl implements UserRepo {
                 output += "<td>" + username + "</td>";
                 output += "<td>" + password + "</td>";
                 output += "<td>" + registerDate + "</td></tr>";
+                
+             // buttons
+            	output += "<td><input name='btnUpdate' type='button' value='Update' "
+            	+ "class='btnUpdate btn btn-secondary' data-userid='" + id + "'></td>"
+            	+ "<td><input name='btnRemove' type='button' value='Remove' "
+            	+ "class='btnRemove btn btn-danger' data-userid='" + id + "'></td></tr>";
 
             }
             conn.close();

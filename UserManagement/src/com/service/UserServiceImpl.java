@@ -21,17 +21,17 @@ public class UserServiceImpl implements UserService {
     public String createUser(String username, String password, String email, String phone, String gender,
                              String designation, String firstName, String lastName) {
         String validation = "";
-        validation = validateInput(email, phone, gender, password, designation);
+        //validation = validateInput(email, phone, gender, password, designation);
 
         //validates entered details
-        if (validation.equalsIgnoreCase("Success")) {
+        //if (validation.equalsIgnoreCase("Success")) {
             if (userRepo.isExistingUserName(username) > 0)
                 return "Username is already existing";
             else
                 return userRepo.createUser(username, password, email, phone, gender, designation, firstName, lastName);
-        } else {
-            return validation;
-        }
+//        } else {
+//            return validation;
+//        }
 
     }
 
